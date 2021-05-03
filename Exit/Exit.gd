@@ -7,8 +7,8 @@ func _ready():
 
 func unlock():
 	locked = false
-	$Light.light_color = Color(0,01,0,1)
+	$Light.light_color = Color(0,1,0,1)
 
 func _on_Exit_body_entered(body):
 	if body.name == "Player" and not locked:
-		queue_free()
+		var _scene = get_tree().change_scene("res://UI/Win.tscn")
